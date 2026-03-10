@@ -11,15 +11,13 @@ console.log(start + "1");
 let firstNumber = 10;
 let secondNumber = 5;
 
-if(firstNumber > secondNumber){
+if (firstNumber > secondNumber) {
   // il primo numero è maggiore
   console.log("La costante firstNumber ha il valore maggiore: ", firstNumber);
-}
-else if (firstNumber === secondNumber){
+} else if (firstNumber === secondNumber) {
   // sono lo stesso numero
   console.log("Le due variabili contengono lo stesso numero");
-}
-else{
+} else {
   // il secondo numero è maggiore
   console.log("La costante secondNumber ha il valore maggiore: ", secondNumber);
 }
@@ -36,11 +34,10 @@ console.log(start + "2");
 
 firstNumber = 2;
 
-if(firstNumber !== 5){
+if (firstNumber !== 5) {
   // è diverso
   console.log("not equal");
-}
-else{
+} else {
   // è uguale
   console.log("equal");
 }
@@ -57,11 +54,10 @@ console.log(start + "3");
 
 firstNumber = 10;
 
-if (firstNumber % 5 === 0){
+if (firstNumber % 5 === 0) {
   // divisibile per 5
   console.log("divisibile per 5");
-}
-else{
+} else {
   // non divisibile per 5
   console.log("non divisibile per 5");
 }
@@ -76,16 +72,18 @@ console.log(space);
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(start + "4");
 
-
 let sum = firstNumber + secondNumber;
 let sub = firstNumber - secondNumber;
-if (firstNumber === 8 || secondNumber === 8 || sum === 8 || sub === 8){
+if (firstNumber === 8 || secondNumber === 8 || sum === 8 || sub === 8) {
   // risultato positivo
-  console.log("O uno dei due numeri è 8 o la somma tra i due numeri fa 8 o la differenza tra i due numeri fa 8");
-}
-else{
+  console.log(
+    "O uno dei due numeri è 8 o la somma tra i due numeri fa 8 o la differenza tra i due numeri fa 8",
+  );
+} else {
   // risultato negativo
-console.log("Nessuno dei due numeri è 8 e nè la loro somma nè la loro differenza fa 8");
+  console.log(
+    "Nessuno dei due numeri è 8 e nè la loro somma nè la loro differenza fa 8",
+  );
 }
 
 console.log(end + "4");
@@ -100,16 +98,16 @@ console.log(space);
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(start + "5");
 
-let totalShoppingCart = 10;
+let totalShoppingCart = 45;
+let shippingCost = 10;
+let finalAmount;
 
-if(totalShoppingCart < 50){
-  // la spedizione non è gratuita
-  totalShoppingCart = totalShoppingCart + 10;
-  console.log("Totale da pagare:", totalShoppingCart, "Nel totale da pagare è presente anche il costo di spedizione di 10 euro");
-}
-else{
-  // spedizione gratuita
-  console.log("Nessuna spedizione da pagare");
+if (totalShoppingCart >= 50) {
+  finalAmount = totalShoppingCart;
+  console.log("Spedizione gratuita! Totale:", finalAmount);
+} else {
+  finalAmount = totalShoppingCart + shippingCost;
+  console.log("Costo spedizione 10€. Totale:", finalAmount);
 }
 
 console.log(end + "5");
@@ -123,25 +121,26 @@ console.log(space);
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(start + "6");
 
+let total = 60;
 let isBlackFriday = true;
+shippingCost = 10;
 
-if(totalShoppingCart < 50){
-  // la spedizione non è gratuita
-  totalShoppingCart = totalShoppingCart + 10;
-
-  if (isBlackFriday === true){
-    // applicazione dello sconto black friday --> 20% = 0.8
-    totalShoppingCart = totalShoppingCart * 0.8;
-    console.log("Totale da pagare:", totalShoppingCart, "Nel totale da pagare è presente anche il costo di spedizione di 10 euro, ma è stato detratto il 20% di sconto per il black friday");
-  }
-  else{
-    console.log("Totale da pagare:", totalShoppingCart, "Nel totale da pagare è presente anche il costo di spedizione di 10 euro");
-  }
-  
+// applicazione dello sconto solo sulla merce
+if (isBlackFriday) {
+  total = total * 0.8;
 }
-else{
-  // spedizione gratuita
-  console.log("Nessuna spedizione da pagare");
+
+// calcolo spedizione
+let finalCheckout;
+if (total >= 50) {
+  finalCheckout = total;
+  console.log("Sconto applicato e spedizione gratuita. Totale:", finalCheckout);
+} else {
+  finalCheckout = total + shippingCost;
+  console.log(
+    "Sconto applicato, ma paghi la spedizione. Totale:",
+    finalCheckout,
+  );
 }
 
 console.log(end + "6");
@@ -162,23 +161,42 @@ let thirdNumber = 30;
 
 // ordinamento numeri
 
-if (firstNumber > secondNumber && firstNumber > thirdNumber && secondNumber > thirdNumber) {
-    console.log("Ordine:", firstNumber, secondNumber, thirdNumber);
-} 
-else if (firstNumber > thirdNumber && firstNumber > secondNumber && thirdNumber > secondNumber) {
-    console.log("Ordine:", firstNumber, thirdNumber, secondNumber);
-} 
-else if (secondNumber > firstNumber && secondNumber > thirdNumber && firstNumber > thirdNumber) {
-    console.log("Ordine:", secondNumber, firstNumber, thirdNumber);
-} 
-else if (secondNumber > thirdNumber && secondNumber > firstNumber && thirdNumber > firstNumber) {
-    console.log("Ordine:", secondNumber, thirdNumber, firstNumber);
-} 
-else if (thirdNumber > firstNumber && thirdNumber > secondNumber && firstNumber > secondNumber) {
-    console.log("Ordine:", thirdNumber, firstNumber, secondNumber);
-} 
-else if (thirdNumber > secondNumber && thirdNumber > firstNumber && secondNumber > firstNumber) {
-    console.log("Ordine:", thirdNumber, secondNumber, firstNumber);
+if (
+  firstNumber > secondNumber &&
+  firstNumber > thirdNumber &&
+  secondNumber > thirdNumber
+) {
+  console.log("Ordine:", firstNumber, secondNumber, thirdNumber);
+} else if (
+  firstNumber > thirdNumber &&
+  firstNumber > secondNumber &&
+  thirdNumber > secondNumber
+) {
+  console.log("Ordine:", firstNumber, thirdNumber, secondNumber);
+} else if (
+  secondNumber > firstNumber &&
+  secondNumber > thirdNumber &&
+  firstNumber > thirdNumber
+) {
+  console.log("Ordine:", secondNumber, firstNumber, thirdNumber);
+} else if (
+  secondNumber > thirdNumber &&
+  secondNumber > firstNumber &&
+  thirdNumber > firstNumber
+) {
+  console.log("Ordine:", secondNumber, thirdNumber, firstNumber);
+} else if (
+  thirdNumber > firstNumber &&
+  thirdNumber > secondNumber &&
+  firstNumber > secondNumber
+) {
+  console.log("Ordine:", thirdNumber, firstNumber, secondNumber);
+} else if (
+  thirdNumber > secondNumber &&
+  thirdNumber > firstNumber &&
+  secondNumber > firstNumber
+) {
+  console.log("Ordine:", thirdNumber, secondNumber, firstNumber);
 }
 
 console.log(end + "7");
@@ -193,13 +211,17 @@ console.log(start + "8");
 
 // controllo se il risultato di typeOf sia un numero o meno
 let type = typeof firstNumber;
-if (type === "number"){
+if (type === "number") {
   // è un numero
   console.log("Il tipo della variabile è un numero: ", firstNumber, ",", type);
-}
-else{
+} else {
   // non è un numero
-  console.log("Il tipo della variabile non è un numero: ", firstNumber, ",", type);
+  console.log(
+    "Il tipo della variabile non è un numero: ",
+    firstNumber,
+    ",",
+    type,
+  );
 }
 
 console.log(end + "8");
@@ -212,11 +234,10 @@ console.log(space);
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(start + "9");
 
-if (firstNumber % 2 === 0){
+if (firstNumber % 2 === 0) {
   // è pari
   console.log("Il numero è pari:", firstNumber);
-}
-else{
+} else {
   // è dispari
   console.log("Il numero è dispari:", firstNumber);
 }
@@ -236,18 +257,18 @@ console.log(space);
     }
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA 
-*/
+/* SCRIVI QUI LA TUA RISPOSTA
+ */
 console.log(start + "10");
 
-let val = 7
+let val = 7;
 // controlli che avvengono gradualmente, dal valore più piccolo
-if (val < 5) { 
-    console.log("Meno di 5");
-} else if (val < 10) { 
-    console.log("Meno di 10");
+if (val < 5) {
+  console.log("Meno di 5");
+} else if (val < 10) {
+  console.log("Meno di 10");
 } else {
-    console.log("10 o maggiore");
+  console.log("10 o maggiore");
 }
 
 console.log(end + "10");
@@ -258,9 +279,9 @@ console.log(space);
 */
 
 const me = {
-  name: 'John',
-  lastName: 'Doe',
-  skills: ['javascript', 'html', 'css'],
+  name: "John",
+  lastName: "Doe",
+  skills: ["javascript", "html", "css"],
 };
 
 /* SCRIVI QUI LA TUA RISPOSTA */
@@ -310,7 +331,7 @@ console.log(start + "14");
 
 // creo un array e poi lo riempio;
 const numeri = [];
-numeri.push(1,2,3,4,5,6,7,8,9,10);
+numeri.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 console.log(numeri);
 
 console.log(end + "14");
@@ -325,7 +346,7 @@ console.log(start + "15");
 
 // rimuovo l'ultimo elemento e lo sostituisco con 100
 // 9,1 vuol dire: dopo la nona posizione, elimina un elemento
-numeri.splice(9,1,100);
+numeri.splice(9, 1, 100);
 console.log(numeri);
 
 console.log(end + "15");
